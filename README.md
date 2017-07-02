@@ -1,11 +1,11 @@
-#Busch-2090
-##An emulator of the Busch 2090 Microtronic Computer System for Arduino Uno R3 and Arduino Mega 2560 
-####Author: Michael Wessel
-####License: GPL 3
-####Hompage: [Author's Homepage](https://www.michael-wessel.info/)
-####Version: 1.0 
+# Busch-2090
+## An emulator of the Busch 2090 Microtronic Computer System for Arduino Uno R3 and Arduino Mega 2560 
+#### Author: Michael Wessel
+#### License: GPL 3
+#### Hompage: [Author's Homepage](https://www.michael-wessel.info/)
+#### Version: 1.0 
 
-###Abstract
+### Abstract
 
 This is an emulator of the Busch 2095 Cassette Interface for the
 historical Busch 2090 Microtronic Computer System, implemented on the
