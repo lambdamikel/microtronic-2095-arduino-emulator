@@ -44,6 +44,11 @@ Soon.
 
 ![IC Socket](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06087.JPG) 
 
+![Connections Left Side](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06093.JPG) 
+
+![Connections Right Side - PIN 10 Disconnected](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06096.JPG) 
+
+![Shields SD Card Shield + LCD Keypad](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06092.JPG)
 
 
 
