@@ -58,9 +58,9 @@
 // Busch 2090 read / write port operations delays (ms)
 //
 
-#define READ_CLOCK_DELAY 4 // SAVE PGM2 Clock Delay 
+#define READ_CLOCK_DELAY 10 // SAVE PGM2 Clock Delay 
 #define WRITE_CLOCK_DELAY 10 // LOAD PGM1 Clock Delay 
-#define READ_DELAY_NEXT_VALUE 150  // SAVE PGM2 Next Word Delay 
+#define READ_DELAY_NEXT_VALUE 200  // SAVE PGM2 Next Word Delay 
 #define WRITE_DELAY_NEXT_VALUE 200 // LOAD PGM1 Next Word Delay
 
 //
