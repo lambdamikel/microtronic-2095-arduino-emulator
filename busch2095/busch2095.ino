@@ -1,6 +1,6 @@
 /*
    A Cassette Tape Emulator for the
-   Historic Busch 2090 Microtronic Computer System
+   Busch 2090 Microtronic Computer System
    for Arduino Uno R3
 
    (C) 2017 Michael Wessel
