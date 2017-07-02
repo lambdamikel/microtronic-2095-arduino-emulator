@@ -1,4 +1,4 @@
-# Busch-2090
+# Busch Microtronic 2095 Tape Emulator for Arduino Uno R3
 ## An emulator of the Busch 2090 Microtronic Computer System for Arduino Uno R3 and Arduino Mega 2560 
 #### Author: Michael Wessel
 #### License: GPL 3
@@ -27,7 +27,7 @@ Without it, this project would not exist.
 I reimplemented his findings in C for the Arduino, because I prefer a microcontroller-based 
 "all in one" solution over the Raspberry Pi, which requires booting Linux etc. 
 
-###Description 
+### Description 
 
 Soon. 
 
