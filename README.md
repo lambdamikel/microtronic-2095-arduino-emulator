@@ -16,7 +16,7 @@ Shield, and an LCD+Keypad Shield. It connects directly to the Busch
 2090 "expansion port", using a simple 14 PIN IC socket and breadboard
 cables.
 
-![Busch Microtronic 2095 Cassette Interface Emulator for Arduino Uno](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/DSC06085.JPG)
+![Busch Microtronic 2095 Cassette Interface Emulator for Arduino Uno](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06085.JPG)
 
 This project owns its existence to [Martin
 Sauter's](https://github.com/martinsauter) [Raspberry Pi-based tape
@@ -38,11 +38,11 @@ of programs from the Microtronic to SD Card.
 
 Soon. 
 
-![Microtronic Expansion Header](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/pinout.jpg)
+![Microtronic Expansion Header](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/pinout.jpg)
 
-![LCD Cables](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/DSC06089.JPG)
+![LCD Cables](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06089.JPG)
 
-![IC Socket](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/DSC06087.JPG) 
+![IC Socket](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06087.JPG) 
 
 
 
