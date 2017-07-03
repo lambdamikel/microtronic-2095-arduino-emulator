@@ -87,6 +87,31 @@ That's it! Just flash your Uno with the `busch2095.ino` sketch, put in
 a Micro SD card (I have used an 8 GB card). The card must be FAT32
 formated. 
 
+In case the LCD buttons should not work properly, have a look at the following 
+function - the threshold values might need to be adjusted to match you equipment.
+Notice that these are analog values: 
+
+~~~~
+int readLCDButtons() {
+
+  cur_button = analogRead(0);
+
+  // notice: these values may need to be tuned!!
+  // and adjusted to your actual LCD Keypad shield
+  // the are analog thresholds
+
+  if (cur_button > 850) return NONE;
+  if (cur_button < 50)   return RIGHT;
+  if (cur_button < 150)  return UP;
+  if (cur_button < 350)  return DOWN;
+  if (cur_button < 500)  return LEFT;
+  if (cur_button < 800)  return SELECT;
+
+  return NONE;
+
+}
+~~~~
+
 ### Usage 
 
 Connect the cable. Power up the Uno. Power up the Microtronic. If the
