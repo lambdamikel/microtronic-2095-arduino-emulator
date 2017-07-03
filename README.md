@@ -12,7 +12,7 @@ This is an emulator of the Busch 2095 Cassette Interface + Tape
 Recorder for the historical Busch 2090 Microtronic Computer System,
 implemented on the Arduino Uno R3. It allows you to save and load
 Microtronic programs to / from an SD card, using an Arduino Uno R3, an
-SD+Ethernet Card Shield, and an LCD+Keypad Shield. It connects
+SD+Ethernet Card Shield, and an LCD+Buttons Shield. It connects
 directly to the Busch 2090 "expansion port", using a simple 14 PIN IC
 socket and breadboard cables.
 
@@ -39,21 +39,22 @@ of programs from the Microtronic to SD Card.
 The emulator is easy to assemble. I have used the following components: 
 
 * [Standard Arduino Uno R3](https://www.amazon.com/Arduino-Uno-R3-Microcontroller-A000066/dp/B008GRTSV6/ref=sr_1_3?ie=UTF8&qid=1499053393&sr=8-3&keywords=arduino+uno+r3) 
-* [LCD + Keypad shield - I used the one from Kuman, but I guess any other brand will do as well](https://www.amazon.com/Kuman-Shield-Display-Arduino-MEGA2560/dp/B01C466H1S/ref=sr_1_3?ie=UTF8&qid=1499052519&sr=8-3&keywords=keypad%2Blcd+shield+arduino)
+* [LCD + Buttons shield - I used the one from Kuman, but I guess any other brand will do as well](https://www.amazon.com/Kuman-Shield-Display-Arduino-MEGA2560/dp/B01C466H1S/ref=sr_1_3?ie=UTF8&qid=1499052519&sr=8-3&keywords=keypad%2Blcd+shield+arduino)
 * [SD Card + Ethernet Shield - I used the one from SainSmart, but I guess any other brand will do as well](https://www.amazon.com/SainSmart-Ethernet-Shield-Arduino-Duemilanove/dp/B006J4FZTW/ref=sr_1_fkmr2_1?ie=UTF8&qid=1499078651&sr=8-1-fkmr2&keywords=sainsmart+sdcard+and+ethernet+shield)
 
 Just stack them together. You might want to use [Arduino pin
 headers](https://www.amazon.com/Hilitchi-110pcs-Arduino-Stackable-Assortment/dp/B01IP60YQA/ref=sr_1_1?ie=UTF8&qid=1499053615&sr=8-1&keywords=arduino+headers),
-because pin 10 of the LCD shield needs to be disconnected from the SD 
-Card shield for proper functioning, and the SD Card + Ethnernet is very tall, so it is difficult to connect the LCD + Buttons shield without headers: 
+because pin 10 of the LCD shield needs to be disconnected from the SD
+Card shield for proper functioning (see next picture!), and also
+because the SD Card shield is very tall, so it is difficult to put the 
+LCD shield on top without headers:
 
 ![Connections Right Side - PIN 10 Disconnected](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06096.JPG) 
 
+![Shields SD Card Shield + LCD Buttons](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06092.JPG)
 
-![Shields SD Card Shield + LCD Keypad](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06092.JPG)
-
-
-Next, solder the wires (using pin headers or directly) to the LCD keypad shield, as shown in this picture: 
+Next, solder the wires (using pin headers or directly) to the LCD
+shield, as shown in this picture:
 
 ![LCD Cables](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06089.JPG)
 
@@ -92,8 +93,8 @@ formated.
 Connect the cable. Power up the Uno. Power up the Microtronic. If the
 SD Card cannot be initialized correctly, the LCD display should say
 so.  If the SD Card is working correctly, you will see the main
-screen, which allows you to select PGM1 via the left keypad button and
-PGM2 with the right keypad button.  Notice that the rightmost button
+screen, which allows you to select PGM1 via the left LCD button and
+PGM2 with the right LCD button.  Notice that the rightmost button
 is the hardware reset button of the Uno. The leftmost button is the
 Select button, and I am using the second button from the left (right
 of Select) for Cancel. Pressing any of these from the main screen will
