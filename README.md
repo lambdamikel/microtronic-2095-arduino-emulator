@@ -42,7 +42,7 @@ The emulator is easy to assemble. I have used the following components:
 * [LCD + Buttons shield - I used the one from Kuman, but I guess any other brand will do as well](https://www.amazon.com/Kuman-Shield-Display-Arduino-MEGA2560/dp/B01C466H1S/ref=sr_1_3?ie=UTF8&qid=1499052519&sr=8-3&keywords=keypad%2Blcd+shield+arduino)
 * [SD Card + Ethernet Shield - I used the one from SainSmart, but I guess any other brand will do as well](https://www.amazon.com/SainSmart-Ethernet-Shield-Arduino-Duemilanove/dp/B006J4FZTW/ref=sr_1_fkmr2_1?ie=UTF8&qid=1499078651&sr=8-1-fkmr2&keywords=sainsmart+sdcard+and+ethernet+shield)
 
-Just stack them together. You might want to use [Arduino pin
+Just stick them together. You might want to use [Arduino pin
 headers](https://www.amazon.com/Hilitchi-110pcs-Arduino-Stackable-Assortment/dp/B01IP60YQA/ref=sr_1_1?ie=UTF8&qid=1499053615&sr=8-1&keywords=arduino+headers),
 because pin 10 of the LCD shield needs to be disconnected from the SD
 Card shield for proper functioning (see next picture!), and also
@@ -147,8 +147,8 @@ of this repository. See the `README.txt` in there.
 
 To create programs on the desktop or laptop computer, I recommend
 [Martin Sauter's Microtronic
-Assembler](https://github.com/martinsauter/Busch-2090-Projects/tree/master/05%20-%20Busch%202090%20Assembler)
-- cool stuff!
+Assembler](https://github.com/martinsauter/Busch-2090-Projects/tree/master/05%20-%20Busch%202090%20Assembler);
+cool stuff!
 
 #### Disclaimer 
 
