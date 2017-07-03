@@ -38,12 +38,14 @@ of programs from the Microtronic to SD Card.
 
 The emulator is easy to assemble. I have used the following components: 
 
-* [https://www.amazon.com/Arduino-Uno-R3-Microcontroller-A000066/dp/B008GRTSV6/ref=sr_1_3?ie=UTF8&qid=1499053393&sr=8-3&keywords=arduino+uno+r3](Standard Arduino Uno R3) 
-* [https://www.amazon.com/Kuman-Shield-Display-Arduino-MEGA2560/dp/B01C466H1S/ref=sr_1_3?ie=UTF8&qid=1499052519&sr=8-3&keywords=keypad%2Blcd+shield+arduino](LCD + Keypad shield - I used the one from Kuman, but I guess any other brand will do as well) 
-* [https://www.amazon.com/SainSmart-Ethernet-Shield-Arduino-Duemilanove/dp/B006J4FZTW/ref=sr_1_fkmr2_1?ie=UTF8&qid=1499078651&sr=8-1-fkmr2&keywords=sainsmart+sdcard+and+ethernet+shield](SD Card + Ethernet Shield - I used the one from Kuman, but I guess any other brand will do as well)
+* [Standard Arduino Uno R3](https://www.amazon.com/Arduino-Uno-R3-Microcontroller-A000066/dp/B008GRTSV6/ref=sr_1_3?ie=UTF8&qid=1499053393&sr=8-3&keywords=arduino+uno+r3) 
+* [LCD + Keypad shield - I used the one from Kuman, but I guess any other brand will do as well](https://www.amazon.com/Kuman-Shield-Display-Arduino-MEGA2560/dp/B01C466H1S/ref=sr_1_3?ie=UTF8&qid=1499052519&sr=8-3&keywords=keypad%2Blcd+shield+arduino)
+* [SD Card + Ethernet Shield - I used the one from SainSmart, but I guess any other brand will do as well](https://www.amazon.com/SainSmart-Ethernet-Shield-Arduino-Duemilanove/dp/B006J4FZTW/ref=sr_1_fkmr2_1?ie=UTF8&qid=1499078651&sr=8-1-fkmr2&keywords=sainsmart+sdcard+and+ethernet+shield)
 
-Just stack them together. You might want to use 
-[https://www.amazon.com/Hilitchi-110pcs-Arduino-Stackable-Assortment/dp/B01IP60YQA/ref=sr_1_1?ie=UTF8&qid=1499053615&sr=8-1&keywords=arduino+headers](Arduino pin headers), because pin 10 of the LCD shield needs to be disconnected from the SD Card shield for proper functioning: 
+Just stack them together. You might want to use [Arduino pin
+headers](https://www.amazon.com/Hilitchi-110pcs-Arduino-Stackable-Assortment/dp/B01IP60YQA/ref=sr_1_1?ie=UTF8&qid=1499053615&sr=8-1&keywords=arduino+headers),
+because pin 10 of the LCD shield needs to be disconnected from the SD 
+Card shield for proper functioning, and the SD Card + Ethnernet is very tall, so it is difficult to connect the LCD + Buttons shield without headers: 
 
 ![Connections Right Side - PIN 10 Disconnected](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06096.JPG) 
 
@@ -138,14 +140,14 @@ return to the main menu.
 
 #### Microtronic Software
 
-A couple of programs are in the
-[https://github.com/lambdamikel/microtronic-2095-arduino-emulator/tree/master/software](software
-subdirectory) of this repository. See the `README.txt` in there. 
+A couple of programs are in the [software
+subdirectory](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/tree/master/software)
+of this repository. See the `README.txt` in there.
 
 To create programs on the desktop or laptop computer, I recommend
-[https://github.com/martinsauter/Busch-2090-Projects/tree/master/05%20-%20Busch%202090%20Assembler](Martin
-Sauter's Microtronic Assembler).
-
+[Martin Sauter's Microtronic
+Assembler](https://github.com/martinsauter/Busch-2090-Projects/tree/master/05%20-%20Busch%202090%20Assembler)
+- cool stuff!
 
 #### Disclaimer 
 
