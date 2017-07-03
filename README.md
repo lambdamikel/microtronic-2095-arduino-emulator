@@ -69,15 +69,14 @@ That means, make the following connections, as shown in the
 `busch2095.ino` sketch (source code):
  	
 ~~~~ 	
+#define BUSCH_IN1 PD3
 #define BUSCH_IN2 A5
 #define BUSCH_IN3 A4
 #define BUSCH_IN4 A3
 
-#define BUSCH_OUT3 A2
-#define BUSCH_OUT2 A1
 #define BUSCH_OUT1 PD2
-
-#define BUSCH_IN1  PD3
+#define BUSCH_OUT2 A1
+#define BUSCH_OUT3 A2
 ~~~~
 
 ![IC Socket](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06087.JPG) 
