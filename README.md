@@ -93,21 +93,21 @@ formated.
 Connect the cable. Power up the Uno. Power up the Microtronic. If the
 SD Card cannot be initialized correctly, the LCD display should say
 so.  If the SD Card is working correctly, you will see the main
-screen, which allows you to select PGM1 via the left LCD button and
-PGM2 with the right LCD button.  Notice that the rightmost button
-is the hardware reset button of the Uno. The leftmost button is the
-Select button, and I am using the second button from the left (right
-of Select) for Cancel. Pressing any of these from the main screen will
-just bring an info message.
+screen, which allows you to select PGM1 via the Left LCD button
+(buttons are capitalized in the following) and PGM2 with the Right LCD
+button.  Notice that the rightmost button is the hardware reset button
+of the Uno. The leftmost button is the Select button, and I am using
+the second button from the left (right of Select) for Cancel. Pressing
+any of these from the main screen will just bring an info message.
 
-To save and load: 
+To save and load a program:
 
 #### PGM2 - Saving a Program to SD Card
 
 Have the program in Microtronic memory. Then, enter `PGM 2` on the
-Microtronic. Next, use the Right button on the emulator. You will now
+Microtronic. Next, use the Right LCD button on the emulator. You will now
 be asked to create a file name for the program you are about to
-save. Filenames are 8 characters long; thè `.MIC` extension is added
+save. Filenames are 8 characters long; the `.MIC` extension is added
 automatically. Just use the Up and Down keys for character
 selection. You can advance to the next character with the Right
 key. Notice that the leftmost key (Select) enters the filename and
@@ -128,16 +128,16 @@ button). Enter `HALT PGM 5` to erase the Microtronic memory, then
 `HALT NEXT 00`, and `HALT PGM 1` to start the Microtronic loading
 process. Next, use the Left LCD button to start PGM 1 loading from SD
 Card.  A directory browser shows up. Use the Up and Down LCD buttons
-to select the `.MIC` file you want to load. Use Select button to
-confirm, and the button next to the Select button to Cancel the
+to select the `.MIC` file you want to load. Use the Select LCD button
+to confirm, and the LCD button next to the Select button to Cancel the
 loading process.
 
 After Select, the tape emulator will send the data to the
 Microtronic. The LCD display informs about the progress. There is no
 feedback on the Microtronic side; its display just stays dark until
 the program has been loaded. Use the Microtronic Reset button when the
-program has been fully transmitted; the tape emulator will stop and
-return to the main menu.
+program has been fully transmitted; the tape emulator will then stop
+and return to the main menu.
 
 #### Microtronic Software
 
