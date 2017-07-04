@@ -58,17 +58,17 @@
 // Busch 2090 read / write port operations delays (ms)
 //
 
-#define READ_CLOCK_DELAY 10 // SAVE PGM2 Clock Delay 
+#define READ_CLOCK_DELAY 4 // SAVE PGM2 Clock Delay 
 #define WRITE_CLOCK_DELAY 10 // LOAD PGM1 Clock Delay 
 #define READ_DELAY_NEXT_VALUE 200  // SAVE PGM2 Next Word Delay 
-#define WRITE_DELAY_NEXT_VALUE 200 // LOAD PGM1 Next Word Delay
+#define WRITE_DELAY_NEXT_VALUE 180 // LOAD PGM1 Next Word Delay
 
 //
 // Cursor and LCD display control
 //
 
 #define CURSOR_OFF 8
-#define DISPLAY 2000
+#define DISPLAY 1200
 #define BLINK_DELAY 250
 
 byte cursor = CURSOR_OFF;
@@ -246,6 +246,15 @@ void storeNibble(byte nibble, boolean first) {
 
 }
 
+void resetPins() {
+
+  digitalWrite(BUSCH_IN4, LOW);
+  digitalWrite(BUSCH_IN3, LOW);
+  digitalWrite(BUSCH_IN2, LOW);
+  digitalWrite(BUSCH_IN1, LOW);
+
+}
+
 //
 // PGM 2 - Save to SD Card
 //
@@ -293,6 +302,13 @@ void pgm2() {
 
   cursor = CURSOR_OFF;
   int pc = 0;
+
+  //
+  //
+  //
+
+  resetPins();  
+  delay(READ_DELAY_NEXT_VALUE);
 
   //
   //
@@ -355,6 +371,11 @@ void pgm2() {
   lcd.print(file);
   delay(DISPLAY);
 
+  //
+  //
+  //
+  
+  resetPins();  
   return;
 
 }
@@ -407,6 +428,13 @@ void pgm1() {
   byte op = 0;
   byte arg1 = 0;
   byte arg2 = 0;
+
+  //
+  //
+  //
+
+  resetPins();  
+  delay(WRITE_DELAY_NEXT_VALUE);
 
   //
   //
@@ -492,9 +520,6 @@ void pgm1() {
           storeNibble(arg1, false);
           storeNibble(arg2, false);
 
-          digitalWrite(BUSCH_IN3, LOW);
-          digitalWrite(BUSCH_IN2, LOW);
-          digitalWrite(BUSCH_IN1, LOW);
 
           delay(WRITE_CLOCK_DELAY);
 
@@ -513,6 +538,11 @@ void pgm1() {
   lcd.print(file);
   delay(DISPLAY);
 
+  //
+  //
+  //
+  
+  resetPins();  
   return;
 
 }
@@ -693,9 +723,9 @@ void showInfo() {
 
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("LEFT:  PGM1/LOAD");
+  lcd.print("LEFT   PGM1/LOAD");
   lcd.setCursor(0, 1);
-  lcd.print("RIGHT: PGM2/SAVE");
+  lcd.print("RIGHT  PGM2/SAVE");
 }
 
 void showAuthor() {
