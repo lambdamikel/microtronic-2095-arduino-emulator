@@ -68,7 +68,7 @@
 //
 
 #define CURSOR_OFF 8
-#define DISPLAY 1200
+#define DISPLAY_DELAY 1200
 #define BLINK_DELAY 250
 
 byte cursor = CURSOR_OFF;
@@ -177,7 +177,7 @@ void setup() {
     lcd.print("SD Card Ready");
   }
 
-  delay(DISPLAY);
+  delay(DISPLAY_DELAY);
   showInfo();
 
 }
@@ -266,7 +266,7 @@ void pgm2() {
   if ( aborted == -1 ) {
     lcd.clear();
     lcd.print("CANCELED!");
-    delay(DISPLAY);
+    delay(DISPLAY_DELAY);
     return;
   }
 
@@ -277,7 +277,7 @@ void pgm2() {
     lcd.setCursor(0, 1);
     lcd.print(file);
     SD.remove(file);
-    delay(DISPLAY);
+    delay(DISPLAY_DELAY);
   }
 
   lcd.clear();
@@ -285,14 +285,14 @@ void pgm2() {
   lcd.print("Saving");
   lcd.setCursor(0, 1);
   lcd.print(file);
-  delay(DISPLAY);
+  delay(DISPLAY_DELAY);
 
   myFile = SD.open( file , FILE_WRITE);
 
   if (! myFile ) {
     lcd.clear();
     lcd.print("SD ERROR!");
-    delay(DISPLAY);
+    delay(DISPLAY_DELAY);
     return;
   }
 
@@ -369,7 +369,7 @@ void pgm2() {
   lcd.print("Saved");
   lcd.setCursor(0, 1);
   lcd.print(file);
-  delay(DISPLAY);
+  delay(DISPLAY_DELAY);
 
   //
   //
@@ -391,7 +391,7 @@ void pgm1() {
   if ( aborted == -1 ) {
     lcd.clear();
     lcd.print("CANCELED!");
-    delay(DISPLAY);
+    delay(DISPLAY_DELAY);
     return;
   }
 
@@ -400,14 +400,14 @@ void pgm1() {
   lcd.print("Loading");
   lcd.setCursor(0, 1);
   lcd.print(file);
-  delay(DISPLAY);
+  delay(DISPLAY_DELAY);
 
   myFile = SD.open( file , FILE_READ);
 
   if (! myFile || ! myFile.isOpen()) {
     lcd.clear();
     lcd.print("SD ERROR!");
-    delay(DISPLAY);
+    delay(DISPLAY_DELAY);
     return;
   }
 
@@ -490,7 +490,7 @@ void pgm1() {
         lcd.print(count);
         lcd.print(" ");
         lcd.print((char) b);
-        delay(DISPLAY);
+        delay(DISPLAY_DELAY);
         break;
       }
 
@@ -536,7 +536,7 @@ void pgm1() {
   lcd.print("Loaded: RESET!");
   lcd.setCursor(0, 1);
   lcd.print(file);
-  delay(DISPLAY);
+  delay(DISPLAY_DELAY);
 
   //
   //
@@ -735,7 +735,7 @@ void showAuthor() {
   lcd.print("2095 TapeArduEmu");
   lcd.setCursor(0, 1);
   lcd.print("by Sauter&Wessel");
-  delay(DISPLAY);
+  delay(DISPLAY_DELAY);
 }
 
 //
@@ -767,5 +767,3 @@ void loop() {
       }
   }
 }
-
-
