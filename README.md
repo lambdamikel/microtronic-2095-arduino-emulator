@@ -20,25 +20,9 @@ Ethernet Shield instead of the Data Logger Shield. The current version
 is easier to assemble, cheaper, and more elegant. 
 
 The emulator directly connects to the Busch 2090 "expansion port",
-using a 14 PIN IC socket and DuPont (breadboard) cables.
+using a 14 PIN DIL IC precision socket and DuPont (breadboard) cables.
 
 ![Busch Microtronic 2095 Cassette Interface Emulator for Arduino Uno](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06085.JPG)
-
-## Acknowledgments 
-
-This project is based on [Martin
-Sauter's](https://github.com/martinsauter) [Raspberry Pi-based tape
-emulator for the Busch 2090 historical
-microcomputer](https://github.com/martinsauter/Busch-2090-Projects),
-who did the [reverse engineering of the Busch Microtronic 2095
-Cassette
-Interface](https://blog.wirelessmoves.com/2017/06/emulating-a-busch-2090-tape-interface-part-1.html)
-protocol.
-
-I reimplemented his findings in C for the Arduino, because I prefer a
-microcontroller-based "all in one" solution over the Raspberry Pi.  In
-addition to Martin's emulator, this emulator also supports saving of
-programs from the Microtronic to SD Card.
 
 ## Assembly
 
@@ -73,7 +57,7 @@ BUSCH_OUT1 <-> PD2
 BUSCH_OUT2 <-> A1
 BUSCH_OUT3 <-> A2
 
-BUSH_GND <-> GND 
+BUSCH_GND <-> GND 
 ~~~~
 
 ![connector](new-version/connector.jpg)
@@ -81,33 +65,33 @@ BUSH_GND <-> GND
 Now program the Uno with the `busch2095.ino` sketch, insert a FAT16 or
 FAT32 formatted SD card, and power it up via USB or the external power
 jack (standard 9V - 12 V external Arduino power supply). You should
-then get the *"SD Card Ready"* and the main menu:
+then get the **"SD Card Ready"** and the main menu:
 
 ![new-version-1](new-version/new-version-1.jpg)
 
 
 ### Problems 
 
-#### Incompatible LCD Display
+#### "SD Card ERROR!" Caused by Incompatible LCD Shield
 
 Please note that the following display shields will NOT work; for
 unknown reasons, the SD card library fails to initialize with them.
-
-So, if you are getting an *"SD Card ERROR!"* instead of the *"SD Card
-Ready"* during startup, consider changing the display shield.
+So, if you are getting an **"SD Card ERROR!"** instead of the **"SD
+Card Ready"** during startup, consider changing the display shield.
 
 Display shields that don't work include the following:
 
 ![bad-displays](new-version/bad-displays.jpg)
 
-Of course, it may also be the case that you simply forgot to put the
-SD card in, that the SD card is not FAT16 or FAT32 formatted, too
-large (i.e., bigger than 8 GBs), or incompatible.
+Of course, it may also be the case that you simply forgot to insert
+the SD card, that the SD card is not FAT16 or FAT32 formatted, is too
+large (i.e., bigger than 8 GBs), or somehow incompatible. Try another
+one then.
 
-#### Button Don't Work Correctly 
+#### Buttons Don't Work Correctly 
 
 In case the LCD buttons should not work properly, have a look at the
-following function - the threshold values may need to be adjusted: 
+following function - the threshold values may need to be adjusted:
 
 ~~~~
 int readLCDButtons() {
@@ -130,33 +114,34 @@ int readLCDButtons() {
 }
 ~~~~
 
-There is an `analog button test mode` that allows you to acquire these
-values - hold down any button (other than the rightmost RESET button)
-during startup. The program will then enter the `analog button test
-mode` which allows you to acquire the values for the different
-buttons:
+There is a test mode that allows you to acquire these (analog button)
+values - to enter the test mode, hold down any button (other than the
+rightmost RESET button) during startup. The program will then enter
+this button test mode which allows you to acquire the (minimum)
+threshold values for the different buttons:
 
 ![new-version-1](new-version/button-test.jpg)
 
-Press the different buttons and note of these analog values. Then
+Press the different buttons and take note of displayed values. Then
 adjust the code above as needed; i.e., if you are observing an analog
-value of 640 for the select button, consider using `< 700`, etc.
+value of 640 for the select button, consider using `< 700`.  Recompile
+and reprogramm the Uno. 
 
 ## Usage
 
-Connect the cable. Power up the Uno. Power up the Microtronic. If the
-SD Card cannot be initialized correctly, the LCD display should say
-so.  If the SD Card is working correctly, you will see the main
-screen, which allows you to select PGM1 via the *Left LCD button* and
-*PGM2 with the Right LCD button.* The leftmost button is the *Select
-button* which is used for selecting files, and for confirmation
-(during filename creation).
+Connect the cable to the Microtronic. Power up the Uno. Power up the
+Microtronic. If the SD card cannot be initialized correctly, the LCD
+display should say so.  If the SD card is working correctly, you will
+see the main screen, which allows you to select PGM1 via the *Left LCD
+button* and *PGM2 with the Right LCD button.* The leftmost button is
+the *Select button* which is used for selecting files, and for
+confirmation during filename creation. 
 
-The rightmost button is the Arduino hardware reset button. 
+The rightmost button is the Arduino hardware reset button.
 
-To save and load a program:
+To save and load a program, use the following main menu functions: 
 
-### PGM2 - Saving a Program to SD Card
+### PGM2 - Save a Program to SD Card
 
 Have the program in Microtronic memory. Then, enter `PGM 2` on the
 Microtronic: `HALT PGM 2`. Next, use the Right LCD button on the
@@ -168,30 +153,29 @@ Right key. Notice that the leftmost key (Select) enters the filename
 and starts saving, whereas the second leftmost button cancels.
 
 After Select, the emulator retrieves the memory words from the
-Microtronic and saves them to SD Card under that filename you
+Microtronic and saves them to SD card under that filename you
 determined. The LCD display and Microtronic display will show the
 saving progress. Notice that saving ends when the whole memory was
 written (at address `&FF`). Otherwise, you will have to hit the Reset
-button on the Microtronic, which will also end saving. The tape
-emulator will then go to the main menu.
+button on the Microtronic, which will also end saving. 
 
-### PGM1 - Loading a Program from SD Card
+### PGM1 - Load a Program from SD Card
 
 Reset the Arduino first - use the Reset button (rightmost LCD
 button). Enter `HALT PGM 5` to erase the Microtronic memory, then
 `HALT NEXT 00`, and `HALT PGM 1` to start the Microtronic loading
 process. Next, use the Left LCD button to start PGM 1 loading from SD
-Card.  A directory browser shows up. Use the Up and Down LCD buttons
-to select the `.MIC` file you want to load. Use the Select LCD button
-to confirm, and the LCD button next to the Select button to Cancel the
-loading process.
+card.  A directory browser shows up. Use the Up and Down buttons to
+select the `.MIC` file you want to load. Use the Select button to
+confirm.
 
 After Select, the tape emulator will send the data to the
-Microtronic. The LCD display informs about the progress. There is no
-feedback on the Microtronic side; its display just stays dark until
-the program has been loaded. Use the Microtronic Reset button when the
-program has been fully transmitted; the tape emulator will then stop
-and return to the main menu.
+Microtronic. The LCD display informs about the progress. There is very
+little feedback on the Microtronic side - its LED display stays dark
+until the program has been loaded. However, you should be able to
+observe a slight flickering of the Microtronic output port LEDs as
+data arrives. Use the Microtronic Reset button at any time to stop the
+loading process. 
 
 ## Microtronic Software
 
@@ -199,10 +183,27 @@ A couple of programs are in the [software
 subdirectory](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/tree/master/software)
 of this repository. See the `README.txt` in there.
 
-To create programs on the desktop or laptop computer, I recommend
+To create programs with your laptop or desktop computer, I recommend
 [Martin Sauter's Microtronic
 Assembler](https://github.com/martinsauter/Busch-2090-Projects/tree/master/05%20-%20Busch%202090%20Assembler);
 cool stuff!
+
+## Acknowledgments 
+
+This project is based on [Martin
+Sauter's](https://github.com/martinsauter) [Raspberry Pi-based tape
+emulator for the Busch 2090 historical
+microcomputer](https://github.com/martinsauter/Busch-2090-Projects),
+who did the [reverse engineering of the Busch Microtronic 2095
+Cassette
+Interface](https://blog.wirelessmoves.com/2017/06/emulating-a-busch-2090-tape-interface-part-1.html)
+protocol.
+
+I reimplemented his findings in C for the Arduino, because I prefer a
+microcontroller-based "all in one" solution over the Raspberry Pi.  In
+addition to Martin's emulator, this emulator also supports saving of
+programs from the Microtronic to SD card.
+
 
 ## Disclaimer 
 
