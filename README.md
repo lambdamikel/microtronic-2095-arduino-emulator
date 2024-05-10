@@ -140,7 +140,7 @@ buttons:
 
 Press the different buttons and note of these analog values. Then
 adjust the code above as needed; i.e., if you are observing an analog
-value of 254 for the Down button, consider using `< 300`, etc.
+value of 640 for the select button, consider using `< 700`, etc.
 
 ## Usage
 
