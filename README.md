@@ -107,8 +107,7 @@ large (i.e., bigger than 8 GBs), or incompatible.
 #### Button Don't Work Correctly 
 
 In case the LCD buttons should not work properly, have a look at the
-following function - the threshold values might need to be adjusted to
-match you equipment.  Notice that these are analog values:
+following function - the threshold values may need to be adjusted: 
 
 ~~~~
 int readLCDButtons() {
@@ -131,16 +130,17 @@ int readLCDButtons() {
 }
 ~~~~
 
-There is a analog button test mode that allows you to acquire these
-values - hold any button (other than the rightmost RESET button)
-down during boot. We will then enter the analog button read test
-mode, which allows you to inspect the values for the different buttons:
+There is an `analog button test mode` that allows you to acquire these
+values - hold down any button (other than the rightmost RESET button)
+during startup. The program will then enter the `analog button test
+mode` which allows you to acquire the values for the different
+buttons:
 
 ![new-version-1](new-version/button-test.jpg)
 
-Pressing the different buttons, take note of these analog values and
-adjust the code above to match these; i.e., if you are observing an
-analog value of 254 for the DOWN button, consider using `< 300`, etc.
+Press the different buttons and note of these analog values. Then
+adjust the code above as needed; i.e., if you are observing an analog
+value of 254 for the Down button, consider using `< 300`, etc.
 
 ## Usage
 
