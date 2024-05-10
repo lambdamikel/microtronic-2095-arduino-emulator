@@ -1,5 +1,5 @@
 # Busch Microtronic 2095 Tape Emulator for Arduino Uno R3
-## An SD Card-Based Emulator of the Busch 2095 Cassette Interface for the Busch 2090 Microtronic Computer System on Arduino Uno R3
+## An SD Card-Based Emulator of the 2095 Cassette Interface for the Busch 2090 Microtronic Computer System 
 #### Author: Michael Wessel
 #### License: GPL 3
 #### Hompage: [Author's Homepage](https://www.michael-wessel.info/)
@@ -8,15 +8,16 @@
 
 ## Abstract
 
-This is an emulator of the Busch 2095 Cassette Interface + Tape
-Recorder for the historical Busch 2090 Microtronic Computer System,
-implemented on the Arduino Uno R3. It allows you to save and load
-Microtronic programs to / from an SD card using an Arduino Uno R3.
+This is an Arduino Uno-based emulator of the Busch 2095 Cassette
+Interface + Tape Recorder for the historical Busch 2090 Microtronic
+Computer System. It allows you to save and load Microtronic programs
+to and from SD card. 
 
-For Version 1.1 of this project, an LCD+Buttons Shield and SD Data
-Logger Shield are required in addition to the Uno. The previous
-Version 1.0 (see below) used an SDCard + Ethernet Shield instead of
-the Data Logger Shield.
+Version 1.1 (2024) of this project requires an LCD+Buttons Shield, an
+SD Data Logger Shield, and an Arduino Uno. The previous Version 1.0
+(from 2016, see below for historical reference) used an SDCard +
+Ethernet Shield instead of the Data Logger Shield. The current version
+is easier to assemble, cheaper, and more elegant. 
 
 The emulator directly connects to the Busch 2090 "expansion port",
 using a 14 PIN IC socket and DuPont (breadboard) cables.
