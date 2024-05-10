@@ -3,7 +3,7 @@
    Busch 2090 Microtronic Computer System
    for Arduino Uno R3
 
-   (C) 2017 Michael Wessel
+   (C) 2017, 2024 Michael Wessel
    lambdamikel@gmail.com
    https://www.michael-wessel.info
 
@@ -108,13 +108,13 @@ int readLCDButtons() {
   // notice: these values may need to be tuned!!
   // and adjusted to your actual LCD Keypad shield
   // the are analog thresholds
-
-  if (cur_button > 850) return NONE;
+  
+  if (cur_button > 1000) return NONE;
   if (cur_button < 50)   return RIGHT;
-  if (cur_button < 150)  return UP;
-  if (cur_button < 350)  return DOWN;
+  if (cur_button < 200)  return UP;
+  if (cur_button < 300)  return DOWN;
   if (cur_button < 500)  return LEFT;
-  if (cur_button < 800)  return SELECT;
+  if (cur_button < 700)  return SELECT;
 
   return NONE;
 
@@ -179,6 +179,24 @@ void setup() {
 
   delay(DISPLAY_DELAY);
   showInfo();
+
+  //
+  // New Button Test Mode 
+  //
+
+  if ( readLCDButtons() != NONE) {
+
+    lcd.clear(); 
+    lcd.setCursor(0,0); 
+    lcd.print("Analog Button:"); 
+    
+    while (true) {
+    
+      lcd.setCursor(0,1); 
+      lcd.print(analogRead(0)); 
+      lcd.print("   "); 
+    }
+  }
 
 }
 
@@ -765,5 +783,6 @@ void loop() {
         showInfo();
         break;
       }
-  }
+  } 
+  
 }
