@@ -44,7 +44,7 @@ programs from the Microtronic to SD Card.
 
 Assembly is straight-forward. You will require the following components: 
 
-* [Standard Arduino Uno R3](https://www.amazon.com/Arduino-Uno-R3-Microcontroller-A000066/dp/B008GRTSV6/ref=sr_1_3?ie=UTF8&qid=1499053393&sr=8-3&keywords=arduino+uno+r3) 
+* [Standard Arduino Uno R3](https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3) 
 * [LCD + Buttons shield](https://www.amazon.com/HiLetgo-Expansion-Backlight-4-5-5-5V-Duemilanove/dp/B00OGYXN8C)
 * [Data Logger Shield](https://www.amazon.com/HiLetgo-Logging-Recorder-Logger-Arduino/dp/B00PI6TQWO)
 
@@ -56,13 +56,10 @@ This stacks together as follows:
 
 ![new-version-1](new-version/new-version-3.jpg)
 
-We need to connect `A1, A2, A3, A4, A5, GND`, and `PD2`, `PD3` to the
-Microtronic. Connect these to the Microtronic 2095 interface socket. I
-have used a 14 PIN precision socket:
+We need to connect `A1, A2, A3, A4, A5, PD2, PD3` as well as `GND`,
+all available on the top of the LCD shield, to the Microtronic. 
 
 ![Microtronic Expansion Header](images/small/pinout.jpg)
-
-![connector](new-version/connector.jpg)
 
 Make the following connections: 
  	
@@ -78,6 +75,8 @@ BUSCH_OUT3 <-> A2
 
 BUSH_GND <-> GND 
 ~~~~
+
+![connector](new-version/connector.jpg)
 
 Now program the Uno with the `busch2095.ino` sketch, insert a FAT16 or
 FAT32 formatted SD card, and power it up via USB or the external power
