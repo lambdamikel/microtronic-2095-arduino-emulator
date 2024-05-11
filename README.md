@@ -28,8 +28,8 @@ using a 14 PIN DIL IC precision socket and DuPont (breadboard) cables.
 
 Assembly is straight-forward. You will require the following components: 
 
-* [Standard Arduino Uno R3](https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3) 
-* [LCD + Buttons shield](https://www.amazon.com/HiLetgo-Expansion-Backlight-4-5-5-5V-Duemilanove/dp/B00OGYXN8C)
+* [Standard Arduino Uno R3] (or clone) 
+* [LCD + Buttons Shield](https://www.amazon.com/HiLetgo-Expansion-Backlight-4-5-5-5V-Duemilanove/dp/B00OGYXN8C)
 * [Data Logger Shield](https://www.amazon.com/HiLetgo-Logging-Recorder-Logger-Arduino/dp/B00PI6TQWO)
 
 This stacks together as follows: 
@@ -82,6 +82,8 @@ Card Ready"** during startup, consider changing the display shield.
 Display shields that don't work include the following:
 
 ![bad-displays](new-version/bad-displays.jpg)
+
+[These are the displays that I am using;](https://www.amazon.com/dp/B09YLX1J7L?ref=ppx_yo2ov_dt_b_product_details&th=1) they work perfectly!
 
 Of course, it may also be the case that you simply forgot to insert
 the SD card, that the SD card is not FAT16 or FAT32 formatted, is too
