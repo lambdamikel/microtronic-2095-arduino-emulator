@@ -83,7 +83,7 @@ Display shields that don't work include the following:
 
 ![bad-displays](new-version/bad-displays.jpg)
 
-[These are the displays that I am using;](https://www.amazon.com/dp/B09YLX1J7L?ref=ppx_yo2ov_dt_b_product_details&th=1) they work perfectly!
+[These are the displays that I am using;](https://www.amazon.com/HiLetgo-Expansion-Backlight-4-5-5-5V-Duemilanove/dp/B00OGYXN8C) they work perfectly!
 
 Of course, it may also be the case that you simply forgot to insert
 the SD card, that the SD card is not FAT16 or FAT32 formatted, is too
