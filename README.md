@@ -24,6 +24,15 @@ using a 14 PIN DIL IC precision socket and DuPont (breadboard) cables.
 
 ![Busch Microtronic 2095 Cassette Interface Emulator for Arduino Uno](https://github.com/lambdamikel/microtronic-2095-arduino-emulator/blob/master/images/small/DSC06085.JPG)
 
+## Demo Video
+
+There is a [nice YouTube video by "My Electronics
+Hobby"](https://youtu.be/0MPBtOWTzlk) showcasing the emulator.
+
+
+![Demo Video](images/demovideo.jpg)
+
+
 ## Assembly
 
 Assembly is straight-forward. You will require the following components: 
