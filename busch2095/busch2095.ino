@@ -112,9 +112,9 @@ int readLCDButtons() {
   if (cur_button > 1000) return NONE;
   if (cur_button < 50)   return RIGHT;
   if (cur_button < 200)  return UP;
-  if (cur_button < 300)  return DOWN;
+  if (cur_button < 400)  return DOWN;
   if (cur_button < 500)  return LEFT;
-  if (cur_button < 700)  return SELECT;
+  if (cur_button < 750)  return SELECT;
 
   return NONE;
 
